@@ -53,6 +53,10 @@
       <nav class="navbar header-navbar pcoded-header iscollapsed" header-theme="themelight1"
         pcoded-header-position="fixed">
         <div class="navbar-wrapper">
+          <div class="navbar-logo" style="background: none;">
+            <img class="img-fluid" src="https://ih0.redbubble.net/image.92286741.6247/sticker,375x360.u5.png" alt="Theme-Logo"
+              style="max-width: 77;height: auto;">
+          </div>
           <div class="navbar-container container-fluid">
             <ul class="nav-right">
               <li class="header-notification">
@@ -362,34 +366,18 @@
                             <div class="card-block">
                                 <div class="row m-b-20">
                                     <div class="col-sm-12 col-lg-6">
-                                        <h4 class="sub-title">1. Pickup or Deliver?</h4>
-                                        <div class="row" style="margin-bottom: 1em;">
-                                            <div class="col-sm-12">
-                                                <div class="col-sm-10">
-                                                <div class="form-check">
-                                                    <label class="form-check-label">
-                                                    <input class="form-check-input" type="radio" name="gender" id="order_method-1" value="pickup" onclick="handleClick(this);"> Pickup
-                                                    </label>
-                                                </div>
-                                                <div class="form-check">
-                                                    <label class="form-check-label">
-                                                    <input class="form-check-input" type="radio" name="gender" id="order_method-2" value="option2"> Delivery
-                                                    </label>
-                                                </div>
-                                                <span class="messages"></span>
-                                                </div>
-                                            </div>
-                                        </div>                                        
-                                    </div>                                    
+                                        <h4 class="sub-title">1. Pickup or Deliver?
+                                          <label class="form-check-label" style="margin-left: 2em;">
+                                            <input class="form-check-input" type="radio" name="pickup" id="order_method-1" value="pickup"
+                                              onclick="handleClick(this);" style="margin-top: .1rem;"> Pickup
+                                          </label>
+                                          <label class="form-check-label" style="margin-left: 2em;">
+                                            <input class="form-check-input" type="radio" name="delivery" id="order_method-2" value="option2"
+                                              style="margin-top: .1rem;"> Pickup
+                                          </label>
+                                        </h4>
+                                    </div>
                                 </div>
-                                <script>
-                                  function handleClick(orderMethod) {                                                                   
-                                      if(orderMethod.value === 'pickup') {
-                                        window.location.href = 'pickup_location.html'
-                                      }
-                                  }
-
-                                </script>                                 
                             </div>
                         </div>
                     </div>
@@ -409,7 +397,14 @@
       </div>
     </div>
   </div>
+  <script>
+    function handleClick(orderMethod) {
+      if (orderMethod.value === 'pickup') {
+        window.location.href = 'pickup_location.html'
+      }
+    }
 
+  </script>
   <!-- Warning Section Ends -->
   <!-- Required Jquery -->
   <script type="text/javascript"

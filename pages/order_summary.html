@@ -53,6 +53,10 @@ class=" js flexbox flexboxlegacy canvas canvastext webgl no-touch geolocation po
     <nav class="navbar header-navbar pcoded-header iscollapsed" header-theme="themelight1"
       pcoded-header-position="fixed">
       <div class="navbar-wrapper">
+        <div class="navbar-logo" style="background: none;">
+          <img class="img-fluid" src="https://ih0.redbubble.net/image.92286741.6247/sticker,375x360.u5.png" alt="Theme-Logo"
+            style="max-width: 77;height: auto;">
+        </div>
         <div class="navbar-container container-fluid">
           <ul class="nav-right">
             <li class="header-notification">
@@ -362,38 +366,30 @@ class=" js flexbox flexboxlegacy canvas canvastext webgl no-touch geolocation po
                           <div class="card-block">
                               <div class="row m-b-20">
                                   <div class="col-sm-12 col-lg-6">
-                                      <h4 class="sub-title">1. Pickup or Deliver?</h4>
-                                      <div class="row" style="margin-bottom: 1em;">
-                                          <div class="col-sm-12">
-                                              <div class="col-sm-10">
-                                              <div class="form-check">
-                                                  <label class="form-check-label">
-                                                  <input class="form-check-input" type="radio" name="gender" id="order_method-1" value="pickup" checked> Pickup
-                                                  </label>
-                                              </div>
-                                              <div class="form-check">
-                                                  <label class="form-check-label">
-                                                  <input class="form-check-input" type="radio" name="gender" id="order_method-2" value="option2"> Delivery
-                                                  </label>
-                                              </div>
-                                              <span class="messages"></span>
-                                              </div>
-                                          </div>
-                                      </div>
+                                      <h4 class="sub-title">1. Pickup or Deliver?
+                                        <label class="form-check-label" style="margin-left: 2em;">
+                                          <input class="form-check-input" type="radio" name="order" id="order_method-1" value="pickup"
+                                            style="margin-top: .1rem;" checked> Pickup
+                                        </label>
+                                        <label class="form-check-label" style="margin-left: 2em;">
+                                          <input class="form-check-input" type="radio" name="order" id="order_method-2" value="option2"
+                                            style="margin-top: .1rem;"> Pickup
+                                        </label>
+                                      </h4>
                                       <h4 class="sub-title">2. Pickup Location</h4>
                                       <div class="row">
                                           <div class="col-sm-12">
                                               <div class="form-group row">
-                                                  <label class="col-sm-3 col-form-label">Phone #</label>
-                                                  <div class="col-sm-9">
+                                                  <label class="col-sm-2 col-form-label">Phone Number:</label>
+                                                  <div class="col-sm-10" style="padding-left: 0px;">
                                                       <div class="input-group input-group-button">
                                                           <input type="text" class="form-control" placeholder="Enter a phone number" value="+1-541-754-3010">
                                                           <div class="input-group-append">
                                                               <button class="btn btn-primary" type="button">Submit</button>
                                                           </div>
                                                       </div>
-                                                  </div>                                                    
-                                                  <div class="col-sm-12" style="text-align: left;">                                                      
+                                                  </div>
+                                                  <div class="col-sm-12" style="text-align: left;">
                                                     <textarea type="text" class="form-control" id="pickup_location" placeholder="">Fashion Place Central</textarea>
                                                   </div>
                                               </div>
@@ -407,13 +403,13 @@ class=" js flexbox flexboxlegacy canvas canvastext webgl no-touch geolocation po
                                                   <div class="col-sm-6">
                                                       <select name="select" class="form-control fill" disabled>
                                                           <option value="double">Double</option>
-                                                          <option value="single">Single</option>                                                          
-                                                          <option value="tripe">Triple</option>                                                          
+                                                          <option value="single">Single</option>
+                                                          <option value="tripe">Triple</option>
                                                       </select>
                                                   </div>
                                                   <div class="col-sm-5">
-                                                    <span> Single $4.55  Double $6.55   Triple $8.55    (with cheese add $1.00) </span>
-                                                  </div>                                                    
+                                                    <small class="order-detail"> Single $4.55 Double $6.55 Triple $8.55 (with cheese add $1.00) </small>
+                                                  </div>
                                               </div>
                                               <div class="form-group row">
                                                   <div class="col-md-11 offset-md-1">
@@ -426,21 +422,21 @@ class=" js flexbox flexboxlegacy canvas canvastext webgl no-touch geolocation po
                                                         <span>Add Cheese</span>
                                                       </label>
                                                   </div>
-                                                  </div>                                                  
+                                                  </div>
                                               </div>
-                                              <div class="form-group row"> 
+                                              <div class="form-group row">
                                                 <label class="col-sm-1 col-form-label" style="text-align: right;"><image src="https://emojis.wiki/emoji-pics/google/french-fries-google.png" height=24 /></label>
                                                 <div class="col-sm-6">
-                                                    <select name="select" class="form-control fill" disabled>                                                       
+                                                    <select name="select" class="form-control fill" disabled>
                                                         <option value="regular">Regular</option>
-                                                        <option value="large">Large</option>                                                        
+                                                        <option value="large">Large</option>
                                                     </select>
                                                 </div>
                                                 <div class="col-sm-5">
-                                                  <span> Regular $2.00  Large $3.00 </span>
-                                                </div>                                                    
+                                                  <small style="line-height: 3;"> Regular $2.00 Large $3.00 </small>
+                                                </div>
                                               </div>
-                                              
+
                                               <div class="form-group row">
                                                 <label class="col-sm-1 col-form-label" style="text-align: right;"><image src="https://www.downloadclipart.net/large/896-soft-drink-in-a-cup-b-and-w-design.png" height=24 /></label>
                                                   <div class="col-sm-6">
@@ -456,8 +452,8 @@ class=" js flexbox flexboxlegacy canvas canvastext webgl no-touch geolocation po
                                                       </select>
                                                   </div>
                                                   <div class="col-sm-5">
-                                                    <span> Regular $1.50  Large $2.25 </span>
-                                                  </div>                                                    
+                                                    <small style="line-height: 3;"> Regular $1.50 Large $2.25 </small>
+                                                  </div>
                                               </div>
                                           </div>
                                       </div>
@@ -525,8 +521,8 @@ class=" js flexbox flexboxlegacy canvas canvastext webgl no-touch geolocation po
                                               </form>
                                             </div>
                                           </div>
-                                        </div>                                        
-                                      </div>                                      
+                                        </div>
+                                      </div>
                                   </div>
                               </div>
                               <div class="row">

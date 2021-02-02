@@ -321,8 +321,8 @@ class=" js flexbox flexboxlegacy canvas canvastext webgl no-touch geolocation po
                                       <div class="row">
                                           <div class="col-sm-12">
                                               <div class="form-group row">
-                                                  <label class="col-sm-2 col-form-label" style="padding-right: 0;">Customer Phone#:</label>
-                                                  <div class="col-sm-10" style="padding-left: 0px;">
+                                                  <label class="col-sm-12 col-md-2 col-lg-3 col-xl-3 col-form-label" style="padding-right: 0; white-space: nowrap;">Customer Phone#:</label>
+                                                  <div class="col-sm-12 col-md-10 col-lg-9 col-xl-9" style="padding-left: 0px;">
                                                       <div class="input-group input-group-button">
                                                           <input type="text" class="form-control" placeholder="Enter a customer phone #" value="+1-541-754-3010">
                                                           <div class="input-group-append">
@@ -350,20 +350,17 @@ class=" js flexbox flexboxlegacy canvas canvastext webgl no-touch geolocation po
                                                       </select>
                                                   </div>
                                                   <div class="col-sm-5">
-                                                    <small class="order-detail"> Single $4.55 Double $6.55 Triple $8.55 (Add Cheese = $1.00) </small>
+                                                    <small> Single $4.55 Double $6.55 Triple $8.55<br>(Add Cheese = $1.00) </small>
                                                   </div>
                                               </div>
                                               <div class="form-group row">
                                                   <div class="col-md-11 offset-md-1">
-                                                    <div class="checkbox-fade fade-in-disabled disabled">
-                                                      <label>
-                                                        <input type="checkbox" value="">
-                                                        <span class="cr">
-                                                          <i class="cr-icon icofont icofont-ui-check txt-disabled"></i>
-                                                        </span>
-                                                        <span>Add Cheese</span>
-                                                      </label>
-                                                  </div>
+                                                    <div class="border-checkbox-section">
+                                                      <div class="border-checkbox-group border-checkbox-group-default">
+                                                        <input class="border-checkbox" type="checkbox" id="checkbox0" disabled="">
+                                                        <label class="border-checkbox-label" for="checkbox0">Add Cheese</label>
+                                                      </div>
+                                                    </div>
                                                   </div>
                                               </div>
                                               <div class="form-group row">
@@ -422,8 +419,9 @@ class=" js flexbox flexboxlegacy canvas canvastext webgl no-touch geolocation po
                                       </div>
                                       <div class="row">&nbsp;</div>
 
+                                      <h4 class="sub-title" style="margin-bottom: 38px;">Order can be picked up at <strong style="font-weight: 700 !important;">Fashion Place Central</strong> at <strong style="font-weight: 700 !important;">6:55pm.</strong></h4>
                                       <!-- PAYMENT DETAILS -->
-                                      <h4 class="sub-title">4. Order Details</h4>
+                                      <h4 class="sub-title">4. Capture Payment</h4>
                                       <div class="row">
                                         <div class="col-sm-12">
                                           <a id="secure-call" style="cursor: pointer;">

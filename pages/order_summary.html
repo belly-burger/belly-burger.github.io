@@ -420,48 +420,15 @@ class=" js flexbox flexboxlegacy canvas canvastext webgl no-touch geolocation po
                                       <div class="row">&nbsp;</div>
 
                                       <!-- PAYMENT DETAILS -->
-                                      <h4 class="sub-title">Payment Details</h4>
+                                      <h4 class="sub-title">Capture Payment</h4>
                                       <div class="row">
                                         <div class="col-sm-12">
-                                          <div class="card cc-container">
-                                            <div class="card-header">
-                                              <h5>Credit Card</h5>
-                                            </div>
-                                            <div class="card-block">
-                                              <form>
-                                                <div class="form-group row">
-                                                  <div class="col">
-                                                    <image src="https://cdn.firespring.com/images/28dd07c1-1fca-4417-be52-0fd3e5464374.jpg" height="45"/>
-                                                  </div>
-                                                </div>
-                                                <div class="form-group row">
-                                                  <div class="col">
-                                                    <input id="cardNumberInputValue" type="number" class="form-control fill" placeholder="Card Number" required="">
-                                                  </div>
-                                                </div>
-                                                <div class="form-group row">
-                                                  <div class="col-sm-6 exp-wrapper">
-                                                    <!-- <input id="expiredDateInputValue" type="number" class="form-control" placeholder="MM/YY" required> -->
-                                                    <input class="form-control border-right" autocomplete="off" id="monthInputValue" maxlength="2" pattern="[0-9]*" inputmode="numerical" placeholder="MM" type="text" data-pattern-validate="" style="border-right: none !important; border-radius: 0px;">
-                                                    <input class="form-control border-left" autocomplete="off" id="yearInputValue" maxlength="2" pattern="[0-9]*" inputmode="numerical" placeholder="YY" type="text" data-pattern-validate="" style="border-left: none !important; border-radius: 0px;">
-                                                  </div>
-                                                  <div class="col-sm-6">
-                                                    <input id="cvcInputValue" type="password" class="form-control" maxlength="4 " placeholder="CVC" required="" autocomplete="off" style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAASCAYAAABSO15qAAAAAXNSR0IArs4c6QAAAPhJREFUOBHlU70KgzAQPlMhEvoQTg6OPoOjT+JWOnRqkUKHgqWP4OQbOPokTk6OTkVULNSLVc62oJmbIdzd95NcuGjX2/3YVI/Ts+t0WLE2ut5xsQ0O+90F6UxFjAI8qNcEGONia08e6MNONYwCS7EQAizLmtGUDEzTBNd1fxsYhjEBnHPQNG3KKTYV34F8ec/zwHEciOMYyrIE3/ehKAqIoggo9inGXKmFXwbyBkmSQJqmUNe15IRhCG3byphitm1/eUzDM4qR0TTNjEixGdAnSi3keS5vSk2UDKqqgizLqB4YzvassiKhGtZ/jDMtLOnHz7TE+yf8BaDZXA509yeBAAAAAElFTkSuQmCC&quot;); background-repeat: no-repeat; background-attachment: scroll; background-size: 16px 18px; background-position: 98% 50%; cursor: auto;">
-                                                  </div>
-                                                </div>
-                                                <div class="form-group row">
-                                                  <div class="col">
-                                                    <input id="cardholder_name" type="text" class="form-control fill" placeholder="Cardholder name" required="">
-                                                  </div>
-                                                </div>
-                                                <div class="form-group row">
-                                                  <div class="col-sm-12">
-                                                    <button id="submitPayment" type="submit" class="btn btn-primary m-b-0 cc-button">Submit</button>
-                                                  </div>
-                                                </div>
-                                              </form>
-                                            </div>
-                                          </div>
+                                          <a id="secure-call" style="cursor: pointer;">
+                                            <img alt="Qries" src="./images/secure-call.png" style="border-radius: 5px;width: 149px;">
+                                          </a>
+                                          <a id="continue" style="cursor: pointer; display: none;">
+                                            <img alt="Qries" src="./images/continue.png" style="border-radius: 5px;width: 160px;">
+                                          </a>
                                         </div>
                                       </div>
                                   </div>
@@ -500,6 +467,10 @@ class=" js flexbox flexboxlegacy canvas canvastext webgl no-touch geolocation po
 
 <!-- Warning Section Ends -->
 <!-- Required Jquery -->
+<script type="text/javascript"
+  src="https://demo.dashboardpack.com/admindek-html/files/assets/js/bootstrap-growl.min.js"></script>
+<script type="text/javascript"
+  src="https://demo.dashboardpack.com/admindek-html/files/assets/pages/notification/notification.js"></script>
 <script type="text/javascript"
   src="https://demo.dashboardpack.com/admindek-html/files/bower_components/jquery/js/jquery.min.js"></script>
 <script type="text/javascript"

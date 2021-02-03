@@ -36,6 +36,29 @@ class=" js flexbox flexboxlegacy canvas canvastext webgl no-touch geolocation po
 <link rel="stylesheet" type="text/css" href="https://demo.dashboardpack.com/admindek-html/files/assets/css/pages.css">
 <link rel="stylesheet" type="text/css" href="css/style.css">
 <script src="../scripts/index.js"></script>
+<script src="../scripts/KomBeaMessaging.js" type="text/javascript"></script>
+<script type="text/javascript">
+	var KM = new KomBeaMessaging();
+
+	function ActivateSecureCall()
+	{
+		KM.Client = KomBeaClient.SECURECALL;
+		KM.SetStartPage(1);
+		KM.SetDataField(6, "11.10");
+		KM.GetDataFields(["ccStatus"]);
+		KM.Start();
+	}
+	
+	function SC_OnFinish(dataFields) 
+	{
+		if (dataFields["ccStatus"] == "1")
+		{
+			document.getElementById("payment_label").innerHTML = "Successful Payment";
+			document.getElementById("secure-call").style.display = "none";
+			document.getElementById("continue").style.display = "initial";
+		}
+	}
+</script>
 </head>
 
 <body themebg-pattern="theme1" class="modal-open" style="overflow: auto;">
@@ -416,13 +439,13 @@ class=" js flexbox flexboxlegacy canvas canvastext webgl no-touch geolocation po
 
                                       <h4 class="sub-title" style="margin-bottom: 38px;">Order can be picked up at <strong style="font-weight: 700 !important;">Fashion Place Central</strong> at <strong style="font-weight: 700 !important;">6:55pm.</strong></h4>
                                       <!-- PAYMENT DETAILS -->
-                                      <h4 class="sub-title">4. Capture Payment</h4>
+                                      <h4 id="payment_label" class="sub-title">4. Capture Payment</h4>
                                       <div class="row">
                                         <div class="col-sm-12">
-                                          <a id="secure-call" style="cursor: pointer;">
+                                          <a id="secure-call" style="cursor: pointer;" onclick="return ActivateSecureCall()">
                                             <img src="./images/secure-call.png" style="border-radius: 5px;width: 149px;">
                                           </a>
-                                          <a id="continue" style="cursor: pointer; display: none;">
+                                          <a id="continue" style="cursor: pointer; display: none;" href="../index.html">
                                             <img id="continue" src="./images/continue.png" style="border-radius: 5px;width: 160px;">
                                           </a>
                                         </div>

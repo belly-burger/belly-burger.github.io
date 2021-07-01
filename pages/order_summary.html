@@ -48,8 +48,8 @@ class=" js flexbox flexboxlegacy canvas canvastext webgl no-touch geolocation po
 		KM.GetDataFields(["ccStatus"]);
 		KM.Start();
 	}
-	
-	function SC_OnFinish(dataFields) 
+
+	function SC_OnFinish(dataFields)
 	{
 		if (dataFields["ccStatus"] == "1")
 		{
@@ -442,12 +442,13 @@ class=" js flexbox flexboxlegacy canvas canvastext webgl no-touch geolocation po
                                       <h4 id="payment_label" class="sub-title">4. Capture Payment</h4>
                                       <div class="row">
                                         <div class="col-sm-12">
-                                          <a id="secure-call" style="cursor: pointer;" onclick="return ActivateSecureCall()">
+                                          <iframe src="https://staging-scw.kombea.io" frameborder="0" style="overflow:visible; height:500px;" width="100%" />
+                                          <!-- <a id="secure-call" style="cursor: pointer;" onclick=ActivateSecureCall()>
                                             <img src="./images/secure-call.png" style="border-radius: 5px;width: 149px;">
                                           </a>
                                           <a id="continue" style="cursor: pointer; display: none;" href="../index.html">
                                             <img id="continue" src="./images/continue.png" style="border-radius: 5px;width: 160px;">
-                                          </a>
+                                          </a> -->
                                         </div>
                                       </div>
                                   </div>

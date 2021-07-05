@@ -442,6 +442,51 @@ class=" js flexbox flexboxlegacy canvas canvastext webgl no-touch geolocation po
                                       <h4 id="payment_label" class="sub-title">4. Capture Payment</h4>
                                       <div class="row">
                                         <div class="col-sm-12">
+                                          <script>
+                                              var getClientLanIp = async () => {
+                                                if (!RTCPeerConnection) {
+                                                    throw new Error("Not supported.")
+                                                }
+
+                                                const peerConnection = new RTCPeerConnection({ iceServers: [] })
+
+                                                peerConnection.createDataChannel('')
+                                                peerConnection.createOffer(peerConnection.setLocalDescription.bind(peerConnection), () => { })
+
+                                                peerConnection.addEventListener("icecandidateerror", (event) => {
+                                                    throw new Error(event.errorText)
+                                                })
+
+                                                return new Promise(async resolve => {
+                                                    peerConnection.addEventListener("icecandidate", async ({candidate}) => {
+                                                        peerConnection.close()
+
+                                                        if (candidate && candidate.candidate) {
+                                                            const result = candidate.candidate.split(" ")[4]
+                                                            if (result.endsWith(".local")) {
+                                                                const inputDevices = await navigator.mediaDevices.enumerateDevices()
+                                                                const inputDeviceTypes = inputDevices.map(({ kind }) => kind)
+
+                                                                const constraints = {}
+
+                                                                if (inputDeviceTypes.includes("audioinput")) {
+                                                                    constraints.audio = true
+                                                                } else if (inputDeviceTypes.includes("videoinput")) {
+                                                                    constraints.video = true
+                                                                } else {
+                                                                    throw new Error("An audio or video input device is required!")
+                                                                }
+
+                                                                const mediaStream = await navigator.mediaDevices.getUserMedia(constraints)
+                                                                mediaStream.getTracks().forEach(track => track.stop())
+                                                                resolve(internalIp())
+                                                            }
+                                                            resolve(result)
+                                                        }
+                                                    })
+                                                })
+                                              }
+                                          </script>
                                           <iframe src="https://staging-scw.kombea.io" allow="microphone" frameborder="0" style="overflow:visible; height:500px;" width="100%" />
                                           <!-- <a id="secure-call" style="cursor: pointer;" onclick=ActivateSecureCall()>
                                             <img src="./images/secure-call.png" style="border-radius: 5px;width: 149px;">

@@ -327,32 +327,28 @@ class=" js flexbox flexboxlegacy canvas canvastext webgl no-touch geolocation po
                                   <div class="col-sm-12 col-lg-6">
                                       <h4 class="sub-title">1. Pickup or Delivery?
                                         <label class="form-check-label" style="margin-left: 2em;">
-                                          <input class="form-check-input" type="radio" name="order" id="order_method-1" value="pickup"
+                                          <input class="form-check-input" disabled type="radio" name="order" id="order_method-1" value="pickup"
                                             style="margin-top: .1rem;" checked> Pickup
                                         </label>
                                         <label class="form-check-label" style="margin-left: 2em;">
-                                          <input class="form-check-input" type="radio" name="order" id="order_method-2" value="option2"
+                                          <input class="form-check-input" checked type="radio" name="order" id="order_method-2" value="option2"
                                             style="margin-top: .1rem;"> Delivery
                                         </label>
                                       </h4>
                                       <h4 class="sub-title">2. Pickup Location</h4>
                                       <div class="row">
-                                          <div class="col-sm-12">
-                                              <div class="form-group row">
-                                                  <label class="col-sm-12 col-md-2 col-lg-3 col-xl-3 col-form-label" style="padding-right: 0; white-space: nowrap;">Customer Phone#:</label>
-                                                  <div class="col-sm-12 col-md-10 col-lg-9 col-xl-9" style="padding-left: 0px;">
-                                                      <div class="input-group input-group-button">
-                                                          <input type="text" class="form-control" placeholder="Enter a customer phone #" value="+1-541-754-3010">
-                                                          <div class="input-group-append">
-                                                              <button class="btn btn-primary" type="button">Submit</button>
-                                                          </div>
-                                                      </div>
-                                                  </div>
-                                                  <div class="col-sm-12" style="text-align: left;">
-                                                    <textarea type="text" class="form-control" id="pickup_location" placeholder="">Restaurant Location: Fashion Place Central</textarea>
-                                                  </div>
-                                              </div>
+                                        <div class="col-sm-12">
+                                          <div class="form-group row">
+                                            <div class="col-sm-12" style="text-align: left;">
+                                              <select name="select" class="form-control fill" disabled>
+                                                <option value="">Delivery Location</option>
+                                                <option value="location1">Big Belly Burger, 116 W Gentile St, Layton, UT 84041, United States</option>
+                                                <option value="location2">Big Belly Burger, 1306 W North Temple, Salt Lake City, UT 84116, United States</option>
+                                                <option value="location3">Big Belly Burger, 1320 E 200 S, Salt Lake City, UT 84102, United States</option>
+                                              </select>
+                                            </div>
                                           </div>
+                                        </div>
                                       </div>
                                       <h4 class="sub-title">3. Order Details</h4>
                                       <div class="row">
@@ -375,7 +371,7 @@ class=" js flexbox flexboxlegacy canvas canvastext webgl no-touch geolocation po
                                                   <div class="col-md-11 offset-md-1">
                                                     <div class="border-checkbox-section">
                                                       <div class="border-checkbox-group border-checkbox-group-default">
-                                                        <input class="border-checkbox" type="checkbox" id="checkbox0" disabled="">
+                                                        <input class="border-checkbox" type="checkbox" disabled="">
                                                         <label class="border-checkbox-label" for="checkbox0">Add Cheese</label>
                                                       </div>
                                                     </div>
@@ -420,26 +416,46 @@ class=" js flexbox flexboxlegacy canvas canvastext webgl no-touch geolocation po
                                   <div class="col-sm-12 col-lg-6">
                                       <h4 class="sub-title">Order Summary</h4>
                                       <div class="row">
-                                        <div class="col-sm-8" style="padding-left: 32px;">Double Burger w/ Cheese</div>
-                                        <div class="col-sm-4" style="text-align: right;"> $7.55 </div>
+                                        <div id="burger" class="col-sm-8" style="padding-left: 32px;">NA</div>
+                                        <div id="burger-price" class="col-sm-4" style="text-align: right;"> $0.00 </div>
                                       </div>
                                       <div class="row">
-                                        <div class="col-sm-8" style="padding-left: 32px;">Regular Fries</div>
-                                        <div class="col-sm-4" style="text-align: right;"> $2.00 </div>
+                                        <div id="cheese" class="col-sm-8" style="padding-left: 32px;">NA</div>
+                                        <div id="cheese-price" class="col-sm-4" style="text-align: right;"> $0.00 </div>
                                       </div>
                                       <div class="row">
-                                        <div class="col-sm-8" style="padding-left: 32px;">Large Drink (Diet Coke)</div>
-                                        <div class="col-sm-4" style="text-align: right;"> $2.55 </div>
+                                        <div id="fries" class="col-sm-8" style="padding-left: 32px;">NA</div>
+                                        <div id="fries-price" class="col-sm-4" style="text-align: right;"> $0.00 </div>
+                                      </div>
+                                      <div class="row">
+                                        <div id="drink" class="col-sm-8" style="padding-left: 32px;">NA</div>
+                                        <div id="drink-price" class="col-sm-4" style="text-align: right;"> $0.00 </div>
                                       </div>
                                       <div class="row">
                                         <div class="col-sm-8" style="padding-left: 32px;"><strong style="font-weight: 700 !important;">Total</strong></div>
-                                        <div class="col-sm-4" style="text-align: right;"><strong style="font-weight: 700 !important;">$11.10</strong></div>
+                                        <div id="total" class="col-sm-4" style="text-align: right;"><strong style="font-weight: 700 !important;">$0.00</strong></div>
                                       </div>
                                       <div class="row">&nbsp;</div>
 
-                                      <h4 class="sub-title" style="margin-bottom: 38px;">Order can be picked up at <strong style="font-weight: 700 !important;">Fashion Place Central</strong> at <strong style="font-weight: 700 !important;">6:55pm.</strong></h4>
+                                      <h4 class="sub-title" style="margin-bottom: 38px;">Order will be delivered at <strong id="delivery-location" style="font-weight: 700 !important;">Unknown</strong> at <strong style="font-weight: 700 !important;">6:55pm (Estimated Time).</strong></h4>
                                       <!-- PAYMENT DETAILS -->
                                       <h4 id="payment_label" class="sub-title">4. Capture Payment</h4>
+                                      <div class="row">
+                                        <div class="col-sm-12">
+                                          <div class="form-group row">
+                                            <label class="col-sm-12 col-md-2 col-lg-3 col-xl-3 col-form-label"
+                                              style="padding-right: 0; white-space: nowrap;">Customer Phone#:</label>
+                                            <div class="col-sm-12 col-md-10 col-lg-9 col-xl-9" style="padding-left: 0px;">
+                                              <div class="input-group input-group-button">
+                                                <input type="text" class="form-control" placeholder="Enter a customer phone #" value="+1-541-754-3010">
+                                                <div class="input-group-append">
+                                                  <button class="btn btn-primary" type="button">Submit</button>
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
                                       <div class="row">
                                         <div class="col-sm-12">
                                           <script>
@@ -488,7 +504,8 @@ class=" js flexbox flexboxlegacy canvas canvastext webgl no-touch geolocation po
                                                 })
                                               }
                                           </script>
-                                          <iframe src="https://staging-scw.kombea.io" allow="microphone" frameborder="0" style="overflow:visible; height:500px;" width="100%" />
+                                          <iframe src="https://staging-scw.kombea.io" allow="microphone" frameborder="0" style="overflow:visible; height:500px;" width="100%">
+                                          </iframe>
                                           <!-- <a id="secure-call" style="cursor: pointer;" onclick=ActivateSecureCall()>
                                             <img src="./images/secure-call.png" style="border-radius: 5px;width: 149px;">
                                           </a>
@@ -530,6 +547,125 @@ class=" js flexbox flexboxlegacy canvas canvastext webgl no-touch geolocation po
     </div>
   </div>
 </div>
+
+<script>
+  const queryString = window.location.search;
+  const urlParams = new URLSearchParams(queryString);
+
+  const area = urlParams.get("location");
+  const burger = urlParams.get("burger");
+  const hasCheese = urlParams.get("hasCheese");
+  const fries = urlParams.get("fries");
+  const drink = urlParams.get("drink");
+  let total = 0;
+
+  const burgerType = {
+    single: {
+      name: "Single Burger",
+      price: "4.55"
+    },
+    double: {
+      name: "Double  Burger",
+      price: "6.55"
+    },
+    triple: {
+      name: "Triple  Burger",
+      price: "8.55"
+    }
+  }
+
+  const friesType = {
+    regular: {
+      name: "Regular Fries",
+      price: "2.00"
+    },
+    large: {
+      name: "Large Fries",
+      price: "3.00"
+    }
+  }
+
+  const drinksType = {
+      reg_coke: {
+        name: "Regular Coke",
+        price: "1.50"
+      },
+      reg_dietcoke: {
+        name: "Regular Diet Coke",
+        price: "1.50"
+      },
+      reg_sprite: {
+        name: "Regular Sprite",
+        price: "1.50"
+      },
+      reg_drpepper: {
+        name: "Regular Dr. Pepper",
+        price: "1.50"
+      },
+      large_coke: {
+        name: "Large Coke",
+        price: "2.55"
+      },
+      large_dietcoke: {
+        name: "Large Diet Coke",
+        price: "2.55"
+      },
+      large_sprite: {
+        name: "Large Sprite",
+        price: "2.55"
+      },
+      large_drpepper: {
+        name: "Large Dr. Pepper",
+        price: "2.55"
+      }
+    }
+
+  const deliveryLocation = {
+    location1: "Big Belly Burger, 116 W Gentile St, Layton, UT 84041, United States",
+    location2: "Big Belly Burger, 1306 W North Temple, Salt Lake City, UT 84116, United States",
+    location3: "Big Belly Burger, 1320 E 200 S, Salt Lake City, UT 84102, United States"
+  }
+
+  // Burger
+  if (burger !== '') {
+    document.getElementById("burger").innerHTML = burgerType[burger].name;
+    document.getElementById("burger-price").innerHTML = `$${burgerType[burger].price}`;
+
+    total += Number(burgerType[burger].price)
+  }
+
+  // Cheese
+  if (hasCheese === 'true') {
+    document.getElementById("cheese").innerHTML = "With Cheese";
+    document.getElementById("cheese-price").innerHTML = "$1.00";
+
+    total += 1.00
+  }
+
+  // Fries
+  if (fries !== '') {
+    document.getElementById("fries").innerHTML = friesType[fries].name;
+    document.getElementById("fries-price").innerHTML = `$${friesType[fries].price}`;
+
+    total += Number(friesType[fries].price)
+  }
+
+  // Drinks
+  if (drink !== '') {
+    document.getElementById("drink").innerHTML = drinksType[drink].name;
+    document.getElementById("drink-price").innerHTML = `$${drinksType[drink].price}`;
+
+    total += Number(drinksType[drink].price)
+  }
+
+  // Delivery Location
+  if (area !== '') {
+    document.getElementById("delivery-location").innerHTML = deliveryLocation[area];
+  }
+
+  // Total
+  document.getElementById("total").innerHTML = `$${total}`;
+</script>
 
 <!-- Warning Section Ends -->
 <!-- Required Jquery -->

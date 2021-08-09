@@ -304,31 +304,25 @@ class=" js flexbox flexboxlegacy canvas canvastext webgl no-touch geolocation po
                                   <div class="col-sm-12 col-lg-6">
                                       <h4 class="sub-title">1. Pickup or Delivery?
                                         <label class="form-check-label" style="margin-left: 2em;">
-                                          <input class="form-check-input" type="radio" name="order" id="order_method-1" value="pickup"
+                                          <input class="form-check-input" disabled type="radio" name="order" id="order_method-1" value="pickup"
                                             style="margin-top: .1rem;" checked> Pickup
                                         </label>
                                         <label class="form-check-label" style="margin-left: 2em;">
-                                          <input class="form-check-input" type="radio" name="order" id="order_method-2" value="option2"
+                                          <input class="form-check-input" checked type="radio" name="order" id="order_method-2" value="option2"
                                             style="margin-top: .1rem;"> Delivery
                                         </label>
                                       </h4>
-                                      <h4 class="sub-title">2. Pickup Location</h4>
+                                      <h4 class="sub-title">2. Delivery Location</h4>
                                       <div class="row">
                                           <div class="col-sm-12">
                                               <div class="form-group row">
-                                                <label class="col-sm-12 col-md-2 col-lg-3 col-xl-3 col-form-label"
-                                                  style="padding-right: 0; white-space: nowrap;">Customer Phone#:</label>
-                                                <div class="col-sm-12 col-md-10 col-lg-9 col-xl-9" style="padding-left: 0px;">
-                                                  <div class="input-group input-group-button">
-                                                    <input type="text" class="form-control" placeholder="Enter a customer phone #" value="+1-541-754-3010">
-                                                    <div class="input-group-append">
-                                                      <button class="btn btn-primary" type="button">Submit</button>
-                                                    </div>
-                                                  </div>
-                                                </div>
                                                 <div class="col-sm-12" style="text-align: left;">
-                                                  <textarea type="text" class="form-control" id="pickup_location"
-                                                    placeholder="">Restaurant Location: Fashion Place Central</textarea>
+                                                  <select id="delivery-location" name="select" class="form-control fill" required>
+                                                    <option value="">Delivery Location</option>
+                                                    <option value="location1">Big Belly Burger, 116 W Gentile St, Layton, UT 84041, United States</option>
+                                                    <option value="location2">Big Belly Burger, 1306 W North Temple, Salt Lake City, UT 84116, United States</option>
+                                                    <option value="location3">Big Belly Burger, 1320 E 200 S, Salt Lake City, UT 84102, United States</option>
+                                                  </select>
                                                 </div>
                                               </div>
                                           </div>
@@ -339,11 +333,11 @@ class=" js flexbox flexboxlegacy canvas canvastext webgl no-touch geolocation po
                                               <div class="form-group row">
                                                   <label class="col-sm-1 col-form-label" style="text-align: right;"><image src="https://tse4.mm.bing.net/th?id=OIP.dUX5MdXnyfKBnMPPH-jc2gHaGf&pid=Api&P=0&w=199&h=175" height=24 /></label>
                                                   <div class="col-sm-6">
-                                                      <select name="select" class="form-control fill" required>
+                                                      <select id="burger" name="select" class="form-control fill" required>
                                                           <option value="">Select Burger</option>
                                                           <option value="double">Double</option>
                                                           <option value="single">Single</option>
-                                                          <option value="tripe">Triple</option>
+                                                          <option value="triple">Triple</option>
                                                       </select>
                                                   </div>
                                                   <div class="col-sm-5">
@@ -354,7 +348,7 @@ class=" js flexbox flexboxlegacy canvas canvastext webgl no-touch geolocation po
                                                   <div class="col-md-11 offset-md-1">
                                                     <div class="checkbox-fade fade-in-primary">
                                                       <label>
-                                                        <input type="checkbox" value="">
+                                                        <input id="hasCheese" type="checkbox" value="">
                                                         <span class="cr">
                                                           <i class="cr-icon icofont icofont-ui-check txt-primary"></i>
                                                         </span>
@@ -366,7 +360,7 @@ class=" js flexbox flexboxlegacy canvas canvastext webgl no-touch geolocation po
                                               <div class="form-group row">
                                                 <label class="col-sm-1 col-form-label" style="text-align: right;"><image src="https://emojis.wiki/emoji-pics/google/french-fries-google.png" height=24 /></label>
                                                 <div class="col-sm-6">
-                                                    <select name="select" class="form-control fill" required>
+                                                    <select id="fries" name="select" class="form-control fill" required>
                                                         <option value="">Select Fries</option>
                                                         <option value="regular">Regular</option>
                                                         <option value="large">Large</option>
@@ -380,7 +374,7 @@ class=" js flexbox flexboxlegacy canvas canvastext webgl no-touch geolocation po
                                               <div class="form-group row">
                                                 <label class="col-sm-1 col-form-label" style="text-align: right;"><image src="https://www.downloadclipart.net/large/896-soft-drink-in-a-cup-b-and-w-design.png" height=24 /></label>
                                                   <div class="col-sm-6">
-                                                      <select name="select" class="form-control fill" required>
+                                                      <select id="drink" name="select" class="form-control fill" required>
                                                           <option value="">Select a Drink</option>
                                                           <option value="reg_coke">Regular Coke</option>
                                                           <option value="reg_dietcoke">Regular Diet Coke</option>
@@ -406,7 +400,7 @@ class=" js flexbox flexboxlegacy canvas canvastext webgl no-touch geolocation po
                                           <div class="col-sm-12">
                                               <div class="input-group">
                                                   <a><button id="submitProfile" type="submit" class="btn btn-primary m-b-0">Add</button></a>
-                                                  <a href="order_summary.html"><button id="submitProfile" type="submit" class="btn btn-primary m-b-0" style="margin-left: 10px;">Done</button></a>
+                                                  <a><button onclick="handleClick();" id="submitProfile" type="submit" class="btn btn-primary m-b-0" style="margin-left: 10px;">Done</button></a>
                                               </div>
                                           </div>
                                       </div>
@@ -431,6 +425,19 @@ class=" js flexbox flexboxlegacy canvas canvastext webgl no-touch geolocation po
     </div>
   </div>
 </div>
+
+<script>
+  function handleClick() {
+    const deliveryLocation = document.getElementById("delivery-location");
+    const burger = document.getElementById("burger");
+    const hasCheese = document.getElementById("hasCheese");
+    const fries = document.getElementById("fries");
+    const drink = document.getElementById("drink");
+
+    window.location.href = `order_summary.html?location=${deliveryLocation.value}&burger=${burger.value}&hasCheese=${hasCheese.checked}&fries=${fries.value}&drink=${drink.value}`;
+  }
+
+</script>
 
 <!-- Warning Section Ends -->
 <!-- Required Jquery -->

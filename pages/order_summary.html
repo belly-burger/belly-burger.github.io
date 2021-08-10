@@ -405,19 +405,19 @@ class=" js flexbox flexboxlegacy canvas canvastext webgl no-touch geolocation po
                                   </div>
                                   <div class="col-sm-12 col-lg-6">
                                       <h4 class="sub-title">Order Summary</h4>
-                                      <div class="row">
+                                      <div class="row" id="burger-container">
                                         <div id="burger" class="col-sm-8" style="padding-left: 32px;">NA</div>
                                         <div id="burger-price" class="col-sm-4" style="text-align: right;"> $0.00 </div>
                                       </div>
-                                      <div class="row">
+                                      <div class="row" id="cheese-container">
                                         <div id="cheese" class="col-sm-8" style="padding-left: 32px;">NA</div>
                                         <div id="cheese-price" class="col-sm-4" style="text-align: right;"> $0.00 </div>
                                       </div>
-                                      <div class="row">
+                                      <div class="row" id="fries-container">
                                         <div id="fries" class="col-sm-8" style="padding-left: 32px;">NA</div>
                                         <div id="fries-price" class="col-sm-4" style="text-align: right;"> $0.00 </div>
                                       </div>
-                                      <div class="row">
+                                      <div class="row" id="drink-container">
                                         <div id="drink" class="col-sm-8" style="padding-left: 32px;">NA</div>
                                         <div id="drink-price" class="col-sm-4" style="text-align: right;"> $0.00 </div>
                                       </div>
@@ -614,6 +614,8 @@ class=" js flexbox flexboxlegacy canvas canvastext webgl no-touch geolocation po
     document.getElementById("burger-price").innerHTML = `$${burgerType[burger].price}`;
 
     total += Number(burgerType[burger].price)
+  } else {
+    document.getElementById("burger-container").style.display = "none";
   }
 
   // Cheese
@@ -622,6 +624,8 @@ class=" js flexbox flexboxlegacy canvas canvastext webgl no-touch geolocation po
     document.getElementById("cheese-price").innerHTML = "$1.00";
 
     total += 1.00
+  } else {
+    document.getElementById("cheese-container").style.display = "none";
   }
 
   // Fries
@@ -630,6 +634,8 @@ class=" js flexbox flexboxlegacy canvas canvastext webgl no-touch geolocation po
     document.getElementById("fries-price").innerHTML = `$${friesType[fries].price}`;
 
     total += Number(friesType[fries].price)
+  } else {
+    document.getElementById("fries-container").style.display = "none";
   }
 
   // Drinks
@@ -638,6 +644,8 @@ class=" js flexbox flexboxlegacy canvas canvastext webgl no-touch geolocation po
     document.getElementById("drink-price").innerHTML = `$${drinksType[drink].price}`;
 
     total += Number(drinksType[drink].price)
+  } else {
+    document.getElementById("drink-container").style.display = "none";
   }
 
   // Delivery Location

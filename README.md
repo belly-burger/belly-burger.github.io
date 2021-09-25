@@ -12,6 +12,7 @@ How to Start
 - After finalizing your code create a PR directly to your branch
   - e.g. git push origin fix-header-title
 - Then create a Pull Request that points to your branch (fix-header-title) going to staging-belly-burger
+- For the final touch ask someone to review your work
 
 Deployment to Staging to Production
 - Create a PR in staging (staging-belly-burger) that point to production (belly-burger)

@@ -14,6 +14,6 @@ How to Start
 - Then create a Pull Request that points to your branch (fix-header-title) going to staging-belly-burger
 - For the final touch ask someone to review your work
 
-Deployment to Staging to Production
+Deployment from Staging to Production
 - Create a PR in staging (staging-belly-burger) that point to production (belly-burger)
 - After that Emil will check if your PR is accepted in Production ( Cross Finger 🤞 )
